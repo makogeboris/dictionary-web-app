@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+/* VARIABLE FONTS */
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/inter/Inter-VariableFont_slnt,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: oblique 0deg 10deg;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("./assets/fonts/lora/Lora-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("./assets/fonts/lora/Lora-Italic-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Inconsolata";
+  src: url("./assets/fonts/inconsolata/Inconsolata-VariableFont_wdth,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+}
+
+@theme {
+  /* BREAKPOINTS */
+  --breakpoint-xs: 30rem;
+
+  /* FONTS */
+  --font-inter: "Inter", sans-serif;
+  --font-lora: "Lora", serif;
+  --font-inconsolata: "Inconsolata", monospace;
+
+  /* COLORS */
+
+  /* NEUTRALS */
+  --color-purple-500: hsl(274 82% 60%);
+  --color-red-500: hsl(0 100% 66%);
+
+  /* DEFAULT LIGHT MODE COLORS */
+  --color-neutral-0: hsl(0 0% 100%);
+  --color-neutral-100: hsl(0 0% 96%);
+  --color-neutral-200: hsl(0 0% 91%);
+  --color-neutral-400: hsl(0 0% 60%);
+  --color-neutral-500: hsl(0 0% 46%);
+  --color-neutral-700: hsl(0 0% 23%);
+  --color-neutral-800: hsl(0 0% 18%);
+  --color-neutral-900: hsl(0 0% 12%);
+  --color-neutral-950: hsl(0 0% 0%);
+  --shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* DARK MODE COLORS */
+.dark {
+  --color-neutral-0: hsl(0 0% 0%);
+  --color-neutral-100: hsl(0 0% 12%);
+  --color-neutral-200: hsl(0 0% 23%);
+  --color-neutral-400: hsl(0 0% 60%);
+  --color-neutral-500: hsl(0 0% 46%);
+  --color-neutral-700: hsl(0 0% 91%);
+  --color-neutral-800: hsl(0 0% 96%);
+  --color-neutral-900: hsl(0 0% 18%);
+  --color-neutral-950: hsl(0 0% 100%);
+  --shadow: 0 5px 20px hsl(274, 82%, 60%);
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+.font-lora {
+  font-family: var(--font-lora);
+}
+
+.font-inconsolata {
+  font-family: var(--font-inconsolata);
+}
+
+/* From Uiverse.io by TimTrayler */
+.switch {
+  font-size: 16px;
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(0, 0%, 46%);
+  transition: 0.2s;
+  border-radius: 10px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  left: 3px;
+  bottom: 3px;
+  background-color: hsl(0, 0%, 100%);
+  transition: 0.4s;
+}
+
+input[type="checkbox"]:focus-visible + .slider {
+  outline: 2px solid hsl(274, 82%, 60%);
+  outline-offset: 2px;
+}
+
+input[type="checkbox"]:focus:not(:focus-visible) + .slider {
+  outline: none;
+  box-shadow: 0 0 1px hsl(0, 0%, 46%);
+}
+
+input[type="checkbox"]:checked + .slider::before {
+  background-color: hsl(0, 0%, 100%);
+}
+
+input[type="checkbox"]:checked + .slider {
+  background-color: hsl(274, 82%, 60%);
+}
+
+input[type="checkbox"]:focus + .slider {
+  box-shadow: 0 0 1px hsl(0, 0%, 46%);
+}
+
+input[type="checkbox"]:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+ul#font-options {
+  box-shadow: var(--shadow);
+}
+
+#search::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
