@@ -96,6 +96,8 @@ const form = document.getElementById("form");
 const search = document.getElementById("search");
 const errorMessage = document.getElementById("errorMessage");
 const display = document.querySelector(".word-info");
+import sadFace from "./assets/images/😕.png";
+import newWindow from "./assets/images/icon-new-window.svg";
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -132,7 +134,7 @@ async function getWord(word) {
   } catch (error) {
     display.innerHTML = `
     <div class="flex items-center flex-col text-center mt-20">
-      <img src="../src/assets/images/😕.png" alt="" />
+      <img src="${sadFace}" alt="" />
 
       <p class="text-base xs:text-xl font-bold text-neutral-800 mt-12">
         ${error.title || "Something went wrong"}
@@ -242,7 +244,7 @@ function renderWord(data) {
     target="_blank"
   >
     <span id="sourceUrl">${data.sourceUrls[0]}</span>
-    <img src="../src/assets/images/icon-new-window.svg" alt="" />
+    <img src="${newWindow}" alt="" />
   </a>
 </div>
   `;
