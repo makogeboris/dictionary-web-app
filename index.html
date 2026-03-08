@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dictionary Web App</title>
+    <title>Dictionary</title>
     <meta
       name="description"
       content="The fastest way to look up words. A clean, ad-free dictionary experience providing precise definitions, origins, and thesaurus entries at your fingertips. Simple, fast, and reliable."
@@ -31,7 +31,7 @@
       >
         <a
           class="focus-visible:outline-2 focus-visible:outline-purple-500 focus-visible:outline-offset-3 rounded"
-          href="/"
+          href="https://dictionary-web-app-rho-three.vercel.app/"
         >
           <img
             src="/src/assets/images/logo.svg"
@@ -141,13 +141,13 @@
       id="dictionary-app"
       class="font-inter max-w-184 mx-auto px-6 sm:px-10 pb-16 sm:pb-28"
     >
-      <form action="#" class="relative">
+      <form id="form" action="#" class="relative">
         <label for="search" class="sr-only">Search for a word</label>
         <input
+          id="search"
           class="w-full py-3.5 px-6 sm:py-5 rounded-2xl font-bold text-base sm:text-xl bg-neutral-100 text-neutral-800 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-purple-500 caret-purple-500"
           type="search"
           name="search"
-          id="search"
           placeholder="Search for any word..."
         />
 
@@ -157,175 +157,13 @@
           alt=""
         />
         <span
-          class="text-sm sm:text-xl font-normal text-red-500 absolute left-0 -bottom-6 sm:-bottom-7 hidden"
+          id="errorMessage"
+          class="text-sm sm:text-xl font-normal text-red-500 absolute left-0 -bottom-6 sm:-bottom-7"
         >
-          Whoops, can’t be empty…
         </span>
       </form>
 
-      <div class="">
-        <div class="mt-6 sm:mt-12 flex items-center justify-between">
-          <div class="flex flex-col items-start">
-            <h1 class="text-[2rem] sm:text-[4rem] text-neutral-800 font-bold">
-              keyboard
-            </h1>
-            <p class="italic font-normal text-lg sm:text-2xl text-purple-500">
-              /ˈkiːbɔːd/
-            </p>
-          </div>
-
-          <div>
-            <audio
-              id="audio"
-              style="position: absolute; opacity: 0; pointer-events: none"
-            >
-              <source src="audio.mp3" />
-            </audio>
-
-            <button
-              type="button"
-              aria-label="Play pronunciation"
-              class="play-button group focus-visible:outline-2 focus-visible:outline-purple-500 focus-visible:outline-offset-3 rounded-full cursor-pointer"
-            >
-              <svg
-                class="w-12 h-12 sm:w-18.5 sm:h-18.5 text-purple-500 group-hover:[&_circle]:opacity-100 group-hover:[&_path]:fill-white"
-                viewBox="0 0 75 75"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle
-                  class="opacity-25 group-hover:opacity-100 transition-opacity duration-200"
-                  cx="37.5"
-                  cy="37.5"
-                  r="37.5"
-                  fill="currentColor"
-                />
-                <path
-                  class="fill-current group-hover:fill-white transition-colors duration-200"
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M29 27V48L50 37.5L29 27Z"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="mt-7.5 sm:mt-12.5">
-          <div class="flex items-center gap-5">
-            <h2 class="text-lg font-bold sm:text-2xl text-neutral-800">noun</h2>
-
-            <div class="w-full h-px bg-neutral-200"></div>
-          </div>
-
-          <p
-            class="text-base font-normal sm:text-xl text-neutral-500 mt-8 sm:mt-10"
-          >
-            Meaning
-          </p>
-
-          <ul
-            class="mt-6 space-y-3 sm:pl-11.5 list-disc list-inside sm:list-outside [&>li]:marker:text-purple-500"
-          >
-            <li
-              class="font-normal pl-2 text-base tracking-tight text-neutral-800"
-            >
-              (etc.) A set of keys used to operate a typewriter, computer etc.
-            </li>
-            <li
-              class="font-normal pl-2 text-base tracking-tight text-neutral-800"
-            >
-              A component of many instruments including the piano, organ, and
-              harpsichord consisting of usually black and white keys that cause
-              different tones to be produced when struck.
-            </li>
-            <li
-              class="font-normal pl-2 text-base tracking-tight text-neutral-800"
-            >
-              A device with keys of a musical keyboard, used to control
-              electronic sound-producing devices which may be built into or
-              separate from the keyboard device.
-            </li>
-          </ul>
-
-          <div class="flex items-center gap-6 mt-6 sm:mt-12">
-            <p class="text-base font-normal sm:text-xl text-neutral-500">
-              Synonyms
-            </p>
-
-            <a
-              class="text-base font-bold sm:text-xl text-purple-500 hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-purple-500 focus-visible:outline-offset-3 cursor-pointer transition-colors duration-300 rounded"
-              href="/"
-            >
-              electronic keyboard
-            </a>
-          </div>
-        </div>
-
-        <div class="mt-7.5 sm:mt-12.5">
-          <div class="flex items-center gap-5">
-            <h2 class="text-lg font-bold sm:text-2xl text-neutral-800">verb</h2>
-
-            <div class="w-full h-px bg-neutral-200"></div>
-          </div>
-
-          <p
-            class="text-base font-normal sm:text-xl text-neutral-500 mt-8 sm:mt-10"
-          >
-            Meaning
-          </p>
-
-          <ul
-            class="mt-6 space-y-3 sm:pl-11.5 list-disc list-inside sm:list-outside [&>li]:marker:text-purple-500"
-          >
-            <li
-              class="font-normal pl-2 text-base tracking-tight text-neutral-800"
-            >
-              To type on a computer keyboard.
-            </li>
-          </ul>
-
-          <blockquote
-            class="font-normal text-base tracking-tight text-neutral-500 mt-3 pl-6.5 sm:pl-12"
-          >
-            “Keyboarding is the part of this job I hate the most.”
-          </blockquote>
-        </div>
-
-        <div class="w-full h-px bg-neutral-200 mt-8 sm:mt-12"></div>
-
-        <div
-          class="flex items-start sm:items-center flex-col sm:flex-row gap-2 sm:gap-5 mt-8 sm:mt-5"
-        >
-          <p
-            class="text-neutral-500 font-normal text-sm underline underline-offset-4"
-          >
-            Source
-          </p>
-
-          <a
-            class="flex items-center gap-2.5 text-neutral-800 font-normal text-sm underline underline-offset-4 cursor-pointer focus-visible:outline-2 focus-visible:outline-purple-500 focus-visible:outline-offset-3 rounded"
-            href="/"
-            >https://en.wiktionary.org/wiki/keyboard
-
-            <img src="./src/assets/images/icon-new-window.svg" alt="" />
-          </a>
-        </div>
-      </div>
-
-      <div class="hidden items-center flex-col text-center mt-20">
-        <img src="./src/assets/images/😕.png" alt="" />
-
-        <p class="text-base xs:text-xl font-bold text-neutral-800 mt-12">
-          No Definitions Found
-        </p>
-
-        <p class="text-sm xs:text-lg font-normal text-neutral-500 mt-5">
-          Sorry pal, we couldn't find definitions for the word you were looking
-          for. You can try the search again at later time or head to the web
-          instead.
-        </p>
-      </div>
+      <div class="word-info"></div>
     </main>
 
     <script type="module" src="/src/main.js"></script>
